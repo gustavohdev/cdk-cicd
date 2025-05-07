@@ -1,0 +1,202 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "CdkCicdStack" {
+    subgraph "cluster-SubGraph.CdkCicdStack" {
+      graph [
+        label = "CdkCicdStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
+      ];
+      subgraph "cluster-SubGraph.AwesomePipeline" {
+        graph [
+          label = "AwesomePipeline",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "CdkCicdStack/AwesomePipeline/Pipeline" [
+          label = " Pipeline",
+          fontsize = 12,
+          image = "/Users/gustavo/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Developer- Tools/64/Arch_AWS-CodePipeline_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "CdkCicdStack/AwesomePipeline/CodeBuildActionRole" [
+          label = " CodeBuildActionRole",
+          fontsize = 12,
+          image = "/Users/gustavo/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation" [
+          label = " SelfMutation",
+          fontsize = 12,
+          image = "/Users/gustavo/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        subgraph "cluster-SubGraph.Assets" {
+          graph [
+            label = "Assets",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          "CdkCicdStack/AwesomePipeline/Assets/FileRole" [
+            label = " FileRole",
+            fontsize = 12,
+            image = "/Users/gustavo/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+          "CdkCicdStack/AwesomePipeline/Assets/FileAsset1" [
+            label = " FileAsset1",
+            fontsize = 12,
+            image = "/Users/gustavo/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Developer- Tools/64/Arch_Amazon-CodeBuild_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+        }
+      }
+      subgraph "cluster-SubGraph.PipelineTestStage" {
+        graph [
+          label = "PipelineTestStage",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        subgraph "cluster-SubGraph.LambdaStack" {
+          graph [
+            label = "LambdaStack",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          "CdkCicdStack/PipelineTestStage/LambdaStack/hello-lambda" [
+            label = " hello-lambda",
+            fontsize = 12,
+            image = "/Users/gustavo/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.266,
+          ];
+        }
+      }
+    }
+  }
+  "CdkCicdStack/AwesomePipeline/Pipeline" -> "CdkCicdStack/AwesomePipeline/CodeBuildActionRole" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/Pipeline" -> "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/Pipeline" -> "CdkCicdStack/AwesomePipeline/Assets/FileAsset1" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/CodeBuildActionRole" -> "CdkCicdStack/AwesomePipeline/Pipeline" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/CodeBuildActionRole" -> "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/CodeBuildActionRole" -> "CdkCicdStack/AwesomePipeline/Assets/FileAsset1" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/Assets/FileRole" -> "CdkCicdStack/AwesomePipeline/Pipeline" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/Assets/FileAsset1" -> "CdkCicdStack/AwesomePipeline/Assets/FileRole" [
+    dir = "both",
+  ];
+  "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation" -> "CdkCicdStack/AwesomePipeline/Pipeline" [
+    dir = "both",
+  ];
+}
